@@ -2,8 +2,16 @@ lockfileVersion: 5.4
 
 specifiers:
   '@excalidraw/excalidraw': ^0.14.2
+  '@lexical/code': ^0.8.1
+  '@lexical/link': ^0.8.1
+  '@lexical/list': ^0.8.1
+  '@lexical/markdown': ^0.8.1
   '@lexical/react': ^0.8.1
+  '@lexical/rich-text': ^0.8.1
+  '@lexical/selection': 0.6.0
+  '@lexical/table': ^0.8.1
   '@lexical/utils': ^0.8.1
+  '@lexical/yjs': 0.6.0
   '@types/react': ^18.0.27
   '@types/react-dom': ^18.0.10
   '@vitejs/plugin-react': ^3.1.0
@@ -16,8 +24,16 @@ specifiers:
 
 dependencies:
   '@excalidraw/excalidraw': registry.npmmirror.com/@excalidraw/excalidraw/0.14.2_biqbaboplfbrettd7655fr4n2y
+  '@lexical/code': registry.npmmirror.com/@lexical/code/0.8.1_lexical@0.8.1
+  '@lexical/link': registry.npmmirror.com/@lexical/link/0.8.1_lexical@0.8.1
+  '@lexical/list': registry.npmmirror.com/@lexical/list/0.8.1_lexical@0.8.1
+  '@lexical/markdown': registry.npmmirror.com/@lexical/markdown/0.8.1_vatqvmedmlqdegvbth6qeyb2cu
   '@lexical/react': registry.npmmirror.com/@lexical/react/0.8.1_xnsft6f6hc5ipn5qhbuogu7fcm
+  '@lexical/rich-text': registry.npmmirror.com/@lexical/rich-text/0.8.1_fisn7o4j5arhva5pfpislea26a
+  '@lexical/selection': registry.npmmirror.com/@lexical/selection/0.6.0_lexical@0.8.1
+  '@lexical/table': registry.npmmirror.com/@lexical/table/0.8.1_lexical@0.8.1
   '@lexical/utils': registry.npmmirror.com/@lexical/utils/0.8.1_lexical@0.8.1
+  '@lexical/yjs': registry.npmmirror.com/@lexical/yjs/0.6.0_lexical@0.8.1+yjs@13.5.47
   lexical: registry.npmmirror.com/lexical/0.8.1
   react: registry.npmmirror.com/react/18.2.0
   react-dom: registry.npmmirror.com/react-dom/18.2.0_react@18.2.0
@@ -758,6 +774,37 @@ packages:
       - '@lexical/selection'
     dev: false
 
+  registry.npmmirror.com/@lexical/markdown/0.8.1_vatqvmedmlqdegvbth6qeyb2cu:
+    resolution: {integrity: sha512-cMwCN28rWvLMYDVLJN0pKnB6qaktJVDtx2sOjcUMg96fP8Aul4OgUzYWcEdd9OCxiy+oHp6iu1FbMa9+JeCs7Q==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@lexical/markdown/-/markdown-0.8.1.tgz}
+    id: registry.npmmirror.com/@lexical/markdown/0.8.1
+    name: '@lexical/markdown'
+    version: 0.8.1
+    peerDependencies:
+      lexical: 0.8.1
+    dependencies:
+      '@lexical/code': registry.npmmirror.com/@lexical/code/0.8.1_lexical@0.8.1
+      '@lexical/link': registry.npmmirror.com/@lexical/link/0.8.1_lexical@0.8.1
+      '@lexical/list': registry.npmmirror.com/@lexical/list/0.8.1_lexical@0.8.1
+      '@lexical/rich-text': registry.npmmirror.com/@lexical/rich-text/0.8.1_fisn7o4j5arhva5pfpislea26a
+      '@lexical/text': registry.npmmirror.com/@lexical/text/0.8.1_lexical@0.8.1
+      '@lexical/utils': registry.npmmirror.com/@lexical/utils/0.8.1_lexical@0.8.1
+      lexical: registry.npmmirror.com/lexical/0.8.1
+    transitivePeerDependencies:
+      - '@lexical/clipboard'
+      - '@lexical/selection'
+    dev: false
+
+  registry.npmmirror.com/@lexical/offset/0.6.0_lexical@0.8.1:
+    resolution: {integrity: sha512-6mkS6XUPOYaXVi1f5nWXSrJyGEbDT9fTiC7ire8jhRw8ejA93Gkg6suL3rN04MH8pxRE7p6hKkKnI8Hi4vNZCg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@lexical/offset/-/offset-0.6.0.tgz}
+    id: registry.npmmirror.com/@lexical/offset/0.6.0
+    name: '@lexical/offset'
+    version: 0.6.0
+    peerDependencies:
+      lexical: 0.6.0
+    dependencies:
+      lexical: registry.npmmirror.com/lexical/0.8.1
+    dev: false
+
   registry.npmmirror.com/@lexical/offset/0.8.1_lexical@0.8.1:
     resolution: {integrity: sha512-h/LV5FNet3vGoSgCRQJHg80MQbLul2HwnZg515WuF12nL5e/xpYdmXizFircVwfabWiYIYWQhO8w4Cui2Vi4Rg==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@lexical/offset/-/offset-0.8.1.tgz}
     id: registry.npmmirror.com/@lexical/offset/0.8.1
@@ -832,6 +879,22 @@ packages:
       - yjs
     dev: false
 
+  registry.npmmirror.com/@lexical/rich-text/0.8.1_fisn7o4j5arhva5pfpislea26a:
+    resolution: {integrity: sha512-uaYt5UcTYewc4gDXEfe/uterK7xEu2CMAUcLyhWeXcrkTnpQR7v/IEJ4MMQexrNas/F1eI7Qi+qw28eE+C59+A==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@lexical/rich-text/-/rich-text-0.8.1.tgz}
+    id: registry.npmmirror.com/@lexical/rich-text/0.8.1
+    name: '@lexical/rich-text'
+    version: 0.8.1
+    peerDependencies:
+      '@lexical/clipboard': 0.8.1
+      '@lexical/selection': 0.8.1
+      '@lexical/utils': 0.8.1
+      lexical: 0.8.1
+    dependencies:
+      '@lexical/selection': registry.npmmirror.com/@lexical/selection/0.6.0_lexical@0.8.1
+      '@lexical/utils': registry.npmmirror.com/@lexical/utils/0.8.1_lexical@0.8.1
+      lexical: registry.npmmirror.com/lexical/0.8.1
+    dev: false
+
   registry.npmmirror.com/@lexical/rich-text/0.8.1_w7muhssfg4ijmbkgqrn6qnroiy:
     resolution: {integrity: sha512-uaYt5UcTYewc4gDXEfe/uterK7xEu2CMAUcLyhWeXcrkTnpQR7v/IEJ4MMQexrNas/F1eI7Qi+qw28eE+C59+A==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@lexical/rich-text/-/rich-text-0.8.1.tgz}
     id: registry.npmmirror.com/@lexical/rich-text/0.8.1
@@ -846,6 +909,17 @@ packages:
       '@lexical/clipboard': registry.npmmirror.com/@lexical/clipboard/0.8.1_lexical@0.8.1
       '@lexical/selection': registry.npmmirror.com/@lexical/selection/0.8.1_lexical@0.8.1
       '@lexical/utils': registry.npmmirror.com/@lexical/utils/0.8.1_lexical@0.8.1
+      lexical: registry.npmmirror.com/lexical/0.8.1
+    dev: false
+
+  registry.npmmirror.com/@lexical/selection/0.6.0_lexical@0.8.1:
+    resolution: {integrity: sha512-IP9QNAH0em0cavS1M+d6rzTWWo0zdxyhPiYnxpj0mzhtbObfEV7L1fEn9PFH8CMDWGC+zXh810l+0Nz9SEPyKA==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@lexical/selection/-/selection-0.6.0.tgz}
+    id: registry.npmmirror.com/@lexical/selection/0.6.0
+    name: '@lexical/selection'
+    version: 0.6.0
+    peerDependencies:
+      lexical: 0.6.0
+    dependencies:
       lexical: registry.npmmirror.com/lexical/0.8.1
     dev: false
 
@@ -895,6 +969,20 @@ packages:
       '@lexical/selection': registry.npmmirror.com/@lexical/selection/0.8.1_lexical@0.8.1
       '@lexical/table': registry.npmmirror.com/@lexical/table/0.8.1_lexical@0.8.1
       lexical: registry.npmmirror.com/lexical/0.8.1
+    dev: false
+
+  registry.npmmirror.com/@lexical/yjs/0.6.0_lexical@0.8.1+yjs@13.5.47:
+    resolution: {integrity: sha512-CcnHgqierfo9nSeAu/xzLcrit37Dahsnp4H6540SeY4rzYUf17k6V/6OORLtIRGdcfeE5h5NxhUqtp+rtDdcpQ==, registry: http://registry.npm.taobao.org/, tarball: https://registry.npmmirror.com/@lexical/yjs/-/yjs-0.6.0.tgz}
+    id: registry.npmmirror.com/@lexical/yjs/0.6.0
+    name: '@lexical/yjs'
+    version: 0.6.0
+    peerDependencies:
+      lexical: 0.6.0
+      yjs: '>=13.5.22'
+    dependencies:
+      '@lexical/offset': registry.npmmirror.com/@lexical/offset/0.6.0_lexical@0.8.1
+      lexical: registry.npmmirror.com/lexical/0.8.1
+      yjs: registry.npmmirror.com/yjs/13.5.47
     dev: false
 
   registry.npmmirror.com/@lexical/yjs/0.8.1_lexical@0.8.1+yjs@13.5.47:

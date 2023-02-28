@@ -1,18 +1,54 @@
-import { LexicalComposer } from "@lexical/react/LexicalComposer";
-import { PlainTextPlugin } from "@lexical/react/LexicalPlainTextPlugin";
-import { ContentEditable } from "@lexical/react/LexicalContentEditable";
-import ExcalidrawPlugin from "./plugins/ExcalidrawPlugin";
-import ToolbarPlugin from "./plugins/ExcalidrawToolbar";
-import { ExcalidrawNode } from "./nodes/ExcalidrawNode";
-import ExampleTheme from "./ExampleTheme";
+
 import LexicalErrorBoundary from '@lexical/react/LexicalErrorBoundary';
+import ExampleTheme from "./themes/ExampleTheme";
+import { LexicalComposer } from "@lexical/react/LexicalComposer";
+import { RichTextPlugin } from "@lexical/react/LexicalRichTextPlugin";
+import { ContentEditable } from "@lexical/react/LexicalContentEditable";
+import { AutoFocusPlugin } from "@lexical/react/LexicalAutoFocusPlugin";
+import ToolbarPlugin from "./plugins/ToolbarPlugin";
+import { HeadingNode, QuoteNode } from "@lexical/rich-text";
+import { TableCellNode, TableNode, TableRowNode } from "@lexical/table";
+import { ListItemNode, ListNode } from "@lexical/list";
+import { CodeHighlightNode, CodeNode } from "@lexical/code";
+import { AutoLinkNode, LinkNode } from "@lexical/link";
+import { LinkPlugin } from "@lexical/react/LexicalLinkPlugin";
+import { ListPlugin } from "@lexical/react/LexicalListPlugin";
+import { MarkdownShortcutPlugin } from "@lexical/react/LexicalMarkdownShortcutPlugin";
+import { TRANSFORMERS } from "@lexical/markdown";
+
+import ActionsPlugin from "./plugins/ActionsPlugin";
+import CodeHighlightPlugin from "./plugins/CodeHighlightPlugin";
+import prepopulatedText from "./SampleText.js";
+
+function Placeholder() {
+  return (
+    <div className="editor-placeholder">
+      Play around with the Markdown plugin...
+    </div>
+  );
+}
 
 const editorConfig = {
+  editorState: prepopulatedText,
   theme: ExampleTheme,
+  // Handling of errors during update
   onError(error) {
     throw error;
   },
-  nodes: [ExcalidrawNode]
+  // Any custom nodes go here
+  nodes: [
+    HeadingNode,
+    ListNode,
+    ListItemNode,
+    QuoteNode,
+    CodeNode,
+    CodeHighlightNode,
+    TableNode,
+    TableCellNode,
+    TableRowNode,
+    AutoLinkNode,
+    LinkNode
+  ]
 };
 
 export default function Editor() {
@@ -20,22 +56,20 @@ export default function Editor() {
     <LexicalComposer initialConfig={editorConfig}>
       <div className="editor-container">
         <ToolbarPlugin />
-
-        <PlainTextPlugin
-        ErrorBoundary={LexicalErrorBoundary}
-          contentEditable={<ContentEditable className="editor-input" />}
-          placeholder={<Placeholder />}
-        />
-        <ExcalidrawPlugin />
+        <div className="editor-inner">
+          <RichTextPlugin
+            contentEditable={<ContentEditable className="editor-input" />}
+            placeholder={<Placeholder />}
+            ErrorBoundary={LexicalErrorBoundary}
+          />
+          <AutoFocusPlugin />
+          <ListPlugin />
+          <LinkPlugin />
+          <MarkdownShortcutPlugin transformers={TRANSFORMERS} />
+          <CodeHighlightPlugin />
+        </div>
+        <ActionsPlugin />
       </div>
     </LexicalComposer>
-  );
-}
-
-function Placeholder() {
-  return (
-    <div className="editor-placeholder">
-      Play around with the Excalidraw plugin...
-    </div>
   );
 }
