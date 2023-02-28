@@ -2,23 +2,21 @@ import { useLexicalComposerContext } from "@lexical/react/LexicalComposerContext
 import * as React from "react";
 
 import "../styles.css";
-import { useState } from "react";
 
-import { INSERT_EXCALIDRAW_COMMAND } from "../plugins/ExcalidrawPlugin";
+import { INSERT_COLLAPSIBLE_COMMAND } from "./CollapsiblePlugin";
 
 export default function ToolbarPlugin(): JSX.Element {
   const [editor] = useLexicalComposerContext();
-  const [activeEditor, setActiveEditor] = useState(editor);
 
   return (
     <div className="toolbar">
       <button
         onClick={() => {
-          activeEditor.dispatchCommand(INSERT_EXCALIDRAW_COMMAND, undefined);
+          editor.dispatchCommand(INSERT_COLLAPSIBLE_COMMAND, undefined);
         }}
         className={"toolbar-item spaced "}
       >
-        <span className="text">Insert Excalidraw</span>
+        <span className="text">Insert Collapsible Container</span>
       </button>
     </div>
   );

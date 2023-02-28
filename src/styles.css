@@ -1,3 +1,5 @@
+@import "https://fonts.googleapis.com/css?family=Reenie+Beanie";
+
 body {
   margin: 0;
   background: #eee;
@@ -14,77 +16,81 @@ body {
   padding: 0 5%;
 }
 
-button {
-  padding-top: 5px;
-  padding-bottom: 5px;
-  padding-left: 10px;
-  padding-right: 10px;
-  margin-right: 5px;
-  margin-top: 5px;
-  font-size: 13px;
-  border: 0px;
-  background-color: #eee;
-  border-radius: 5px;
-  cursor: pointer;
-}
-
-.ExcalidrawModal__overlay {
-  display: flex;
-  align-items: center;
-  position: fixed;
-  flex-direction: column;
-  top: 0px;
-  bottom: 0px;
-  left: 0px;
-  right: 0px;
-  flex-grow: 0px;
-  flex-shrink: 1px;
-  z-index: 100;
-  background-color: rgba(40, 40, 40, 0.6);
-}
-.ExcalidrawModal__actions {
-  text-align: end;
+.Placeholder__root {
+  font-size: 15px;
+  color: #999;
+  overflow: hidden;
   position: absolute;
-  right: 5px;
-  top: 5px;
-  z-index: 1;
+  text-overflow: ellipsis;
+  top: 8px;
+  left: 28px;
+  right: 28px;
+  user-select: none;
+  white-space: nowrap;
+  display: inline-block;
+  pointer-events: none;
 }
-.ExcalidrawModal__actions button {
-  background-color: #fff;
-  border-radius: 5px;
+/**
+ * Copyright (c) Meta Platforms, Inc. and affiliates.
+ *
+ * This source code is licensed under the MIT license found in the
+ * LICENSE file in the root directory of this source tree.
+ *
+ *
+ */
+
+.Collapsible__container {
+  background: #fcfcfc;
+  border: 1px solid #eee;
+  border-radius: 10px;
+  margin-bottom: 8px;
 }
 
-.ExcalidrawModal__actions button:hover {
-  background-color: rgb(214, 213, 213);
+.Collapsible__title {
+  cursor: pointer;
+  padding: 5px 5px 5px 20px;
+  position: relative;
+  font-weight: bold;
+  list-style: none;
+  outline: none;
 }
 
-.ExcalidrawModal__row {
+.Collapsible__title::marker,
+.Collapsible__title::-webkit-details-marker {
+  display: none;
+}
+
+.Collapsible__title:before {
+  border-style: solid;
+  border-color: transparent;
+  border-width: 4px 6px 4px 6px;
+  border-left-color: #000;
+  display: block;
+  content: "";
+  position: absolute;
+  left: 7px;
+  top: 50%;
+  transform: translateY(-50%);
+}
+
+.Collapsible__container[open] .Collapsible__title:before {
+  border-color: transparent;
+  border-width: 6px 4px 0 4px;
+  border-top-color: #000;
+}
+
+.Collapsible__content {
+  padding: 0 5px 5px 20px;
+}
+
+.Collapsible__collapsed .Collapsible__content {
+  display: none;
+  user-select: none;
+}
+
+.editor {
+  height: 100%;
   position: relative;
-  padding: 40px 5px 5px;
-  width: 70vw;
-  height: 70vh;
-  border-radius: 8px;
-  box-shadow: 0 12px 28px 0 rgba(0, 0, 0, 0.2), 0 2px 4px 0 rgba(0, 0, 0, 0.1),
-    inset 0 0 0 1px rgba(255, 255, 255, 0.5);
-}
-.ExcalidrawModal__row > div {
-  border-radius: 5px;
-}
-.ExcalidrawModal__modal {
-  position: relative;
-  z-index: 10;
-  top: 50px;
-  width: auto;
-  left: 0;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  border-radius: 8px;
-  background-color: #eee;
-}
-.ExcalidrawModal__discardModal {
-  margin-top: 60px;
-  text-align: center;
 }
 
 .editor-container {
@@ -108,7 +114,7 @@ button {
   position: relative;
   tab-size: 1;
   outline: 0;
-  padding: 0px 10px 5px;
+  padding: 0px 15px 5px;
   caret-color: #444;
 }
 
@@ -118,7 +124,7 @@ button {
   position: absolute;
   text-overflow: ellipsis;
   top: 45px;
-  left: 10px;
+  left: 15px;
   font-size: 15px;
   user-select: none;
   display: inline-block;
@@ -159,7 +165,7 @@ button {
 }
 
 .toolbar button.toolbar-item.spaced {
-  margin: 5px;
+  margin: 7px;
 }
 
 .toolbar .toolbar-item:hover:not([disabled]) {

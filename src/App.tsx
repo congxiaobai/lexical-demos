@@ -1,18 +1,23 @@
 import { LexicalComposer } from "@lexical/react/LexicalComposer";
 import { PlainTextPlugin } from "@lexical/react/LexicalPlainTextPlugin";
 import { ContentEditable } from "@lexical/react/LexicalContentEditable";
-import ExcalidrawPlugin from "./plugins/ExcalidrawPlugin";
-import ToolbarPlugin from "./plugins/ExcalidrawToolbar";
-import { ExcalidrawNode } from "./nodes/ExcalidrawNode";
-import ExampleTheme from "./ExampleTheme";
-import LexicalErrorBoundary from '@lexical/react/LexicalErrorBoundary';
+import ToolbarPlugin from "./plugins/CollapsibleToolbar";
+import CollapsiblePlugin from "./plugins/CollapsiblePlugin";
+import ExampleTheme from "./themes/ExampleTheme";
+import { CollapsibleContainerNode } from "./nodes/CollapsibleContainerNode";
+import { CollapsibleContentNode } from "./nodes/CollapsibleContentNode";
+import { CollapsibleTitleNode } from "./nodes/CollapsibleTitleNode";
 
 const editorConfig = {
   theme: ExampleTheme,
   onError(error) {
     throw error;
   },
-  nodes: [ExcalidrawNode]
+  nodes: [
+    CollapsibleContainerNode,
+    CollapsibleContentNode,
+    CollapsibleTitleNode
+  ]
 };
 
 export default function Editor() {
@@ -22,11 +27,10 @@ export default function Editor() {
         <ToolbarPlugin />
 
         <PlainTextPlugin
-        ErrorBoundary={LexicalErrorBoundary}
           contentEditable={<ContentEditable className="editor-input" />}
           placeholder={<Placeholder />}
         />
-        <ExcalidrawPlugin />
+        <CollapsiblePlugin />
       </div>
     </LexicalComposer>
   );
@@ -35,7 +39,7 @@ export default function Editor() {
 function Placeholder() {
   return (
     <div className="editor-placeholder">
-      Play around with the Excalidraw plugin...
+      Play around with the collapsible container plugin...
     </div>
   );
 }
