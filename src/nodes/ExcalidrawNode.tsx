@@ -66,7 +66,8 @@ export class ExcalidrawNode extends DecoratorNode<JSX.Element> {
   }
 
   constructor(data = "[]", key?: NodeKey) {
-    console.log({data})
+    console.log('Node+++++++++constructor',{data})
+  
     super(key);
     this.__data = data;
   }
@@ -101,6 +102,7 @@ export class ExcalidrawNode extends DecoratorNode<JSX.Element> {
   }
 
   exportDOM(editor: LexicalEditor): DOMExportOutput {
+    console.log('Node+++++++++exportDOM')
     const element = document.createElement("span");
     const content = editor.getElementByKey(this.getKey());
     if (content !== null) {
@@ -114,12 +116,13 @@ export class ExcalidrawNode extends DecoratorNode<JSX.Element> {
   }
 
   setData(data: string): void {
+    console.log('Node+++++++++setData')
     const self = this.getWritable();
     self.__data = data;
   }
 
   decorate(editor: LexicalEditor, config: EditorConfig): JSX.Element {
-    console.log({__data:this.__data})
+    console.log('Node+++++++++decorate')
     return (
       <Suspense fallback={null}>
         <ExcalidrawComponent nodeKey={this.getKey()} data={this.__data} />

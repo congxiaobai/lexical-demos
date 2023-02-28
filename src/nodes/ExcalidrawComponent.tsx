@@ -27,6 +27,7 @@ export default function ExcalidrawComponent({
   data: string;
   nodeKey: NodeKey;
 }): JSX.Element {
+
   const [editor] = useLexicalComposerContext();
   const [isModalOpen, setModalOpen] = useState<boolean>(
     data === "[]" && editor.isEditable()
@@ -123,6 +124,7 @@ export default function ExcalidrawComponent({
       const node = $getNodeByKey(nodeKey);
       if ($isExcalidrawNode(node)) {
         if (newData.length > 0) {
+          console.log('Component++++++++++setData',{newData})
           node.setData(JSON.stringify(newData));
         } else {
           node.remove();

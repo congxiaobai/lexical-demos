@@ -26,7 +26,7 @@ export default function ExcalidrawPlugin(): null {
     return editor.registerCommand(
       INSERT_EXCALIDRAW_COMMAND,
       () => {
-        console.log('registerCommand')
+        console.log('执行命令')
         const excalidrawNode = $createExcalidrawNode();
 
         $insertNodes([excalidrawNode]);
