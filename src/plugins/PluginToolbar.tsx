@@ -3,7 +3,7 @@ import * as React from "react";
 
 import "../styles.css";
 
-import { INSERT_COLLAPSIBLE_COMMAND } from "./CollapsiblePlugin";
+import { INSERT_HORIZONTAL_RULE_COMMAND } from "@lexical/react/LexicalHorizontalRuleNode";
 
 export default function ToolbarPlugin(): JSX.Element {
   const [editor] = useLexicalComposerContext();
@@ -12,11 +12,11 @@ export default function ToolbarPlugin(): JSX.Element {
     <div className="toolbar">
       <button
         onClick={() => {
-          editor.dispatchCommand(INSERT_COLLAPSIBLE_COMMAND, undefined);
+          editor.dispatchCommand(INSERT_HORIZONTAL_RULE_COMMAND, undefined);
         }}
         className={"toolbar-item spaced "}
       >
-        <span className="text">Insert Collapsible Container</span>
+        <span className="text">Insert Horizontal Rule</span>
       </button>
     </div>
   );
